@@ -1,0 +1,16 @@
+{
+  "name": "ekwa",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "tauri": "tauri",
+    "publish": "gh-pages -d ./src"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  },
+  "dependencies": {
+    "gh-pages": "^6.2.0"
+  }
+}

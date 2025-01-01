@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="style.css" />
+
+        <meta name="robots" content="index, follow" />
+        <meta
+            name="description"
+            content="EKwa est une application simple pour tracer des courbes de fonctions. Visualisez vos fonctions rapidement des maintenant !"
+        />
+        <title>EKwa - Traceur de courbe</title>
+        <meta
+            name="keywords"
+            content="traceur de courbes, courbes mathématiques, visualisation de fonctions, EKwa, graphe en ligne, mathématiques, outils éducatifs"
+        />
+        <meta name="author" content="Bilal Boudjemline (lalBi94 on GitHub)" />
+
+        <meta property="og:title" content="EKwa - Traceur de courbes" />
+        <meta
+            property="og:description"
+            content="Découvrez EKwa, l'outil pour tracer et analyser des courbes de fonction rapidement."
+        />
+        <meta property="og:image" content="./icon.png" />
+        <meta property="og:url" content="https://lalbi94.github.io/EKwa/" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta
+            name="twitter:title"
+            content="EKwa - Traceur de courbes en ligne"
+        />
+        <meta
+            name="twitter:description"
+            content="Utilisez EKwa pour tracer facilement des courbes et visualiser vos fonctions."
+        />
+        <meta name="twitter:image" content="./icon.png" />
+
+        <link rel="canonical" href="https://lalbi94.github.io/EKwa/" />
+    </head>
+
+    <body>
+        <div id="configs">
+            <div id="sub-configs">
+                <div class="sub-sub-configs">
+                    <label id="label-fn" for="fn">f(x)=</label>
+
+                    <textarea type="text" id="fn" name="fn">
+Math.log(x)*Math.sin(x)</textarea
+                    >
+                </div>
+
+                <div class="sub-sub-configs">
+                    <label id="label-slider" for="slider"
+                        >ZOOM&nbsp;(x30)</label
+                    >
+
+                    <input
+                        type="range"
+                        id="slider"
+                        name="slider"
+                        min="1"
+                        max="100"
+                        value="30"
+                    />
+                </div>
+
+                <div class="sub-sub-configs">
+                    <label id="label-limit" for="limit">LIMIT X </label>
+
+                    <input
+                        type="number"
+                        id="limit"
+                        name="limit"
+                        min="0"
+                        max="99999"
+                        value="200"
+                    />
+                </div>
+
+                <div class="sub-sub-configs">
+                    <label id="label-dx" for="dx">DX </label>
+
+                    <input
+                        type="number"
+                        id="dx"
+                        name="dx"
+                        min="0.001"
+                        max="9000"
+                        value="0.5"
+                    />
+                </div>
+            </div>
+
+            <div id="compute-zone">
+                <button class="compute-zone-btn" id="compute">COMPUTE</button>
+                <button class="compute-zone-btn" id="clear">CLEAR</button>
+                <button class="compute-zone-btn" id="export">EXPORT</button>
+            </div>
+        </div>
+
+        <div id="info-box"></div>
+
+        <canvas id="graph"></canvas>
+        <script type="module" src="./scripts/tracor.mjs"></script>
+    </body>
+</html>
