@@ -4,7 +4,7 @@
 
 ## Introduction
 
-A l'instar de Desmos ou Géogébra, EKwa est un simple traceur de fonction écrit en Javascipt, pouvant devenir un peu plus complexe en manipulant bien **JS**.
+A l'instar de [Desmos](https://www.desmos.com/calculator?lang=fr) ou [Géogébra](https://www.geogebra.org/classic?lang=fr), EKwa est un simple traceur de fonction écrit en [Javascipt](https://developer.mozilla.org/fr/docs/Web/JavaScript), pouvant devenir un peu plus complexe en manipulant bien **JS**.
 
 ## Fonctionnalités
 
@@ -53,7 +53,7 @@ $$
 f(x)={cos(x)}(\frac{tan(x)^2}{e^{sin(x)}})
 $$
 
-ou en javascript :
+ou en Javascript :
 
 ```js
 Math.cos(x) * (Math.pow(Math.tan(x), 2) / Math.pow(Math.E, Math.sin(x)));
