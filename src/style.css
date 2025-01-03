@@ -31,9 +31,6 @@ body {
     background: white;
 }
 
-#export-tmp > #export-tmp-img {
-}
-
 #export-tmp > #close-export {
     border: none;
     background: var(--red);
@@ -88,6 +85,7 @@ canvas {
 .title {
     text-align: right;
     background: -webkit-linear-gradient(#333, #959595);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
