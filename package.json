@@ -6,7 +6,7 @@
   "scripts": {
     "tauri": "tauri",
     "publish": "gh-pages -d ./src",
-    "build:all": "cargo tauri build --target all"
+    "build:all": "cargo tauri build"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2"

@@ -1,4 +1,4 @@
-# EKwa - Traceur de courbe portable
+# EKwa - Traceur de courbe léger et portable
 
 <img width="500" src="./img/1.png"/>
 
@@ -23,7 +23,7 @@ L'application est disponible sous differente forme : sur le web (via gh-pages), 
 
 ## Evolutions
 
-Ce projet peut evoluer en different point. Ameliorer l'intéraction avec l'application pour un Non-Javascriptien, rendre plus rapide l'application parce que la c'est terrible. Peut etre rajouter plus de design et rajouter plus de fonctionnalité tel que le téléchargement du graphes en plusieurs format, etc...
+Ce projet peut evoluer en different point. Ameliorer l'intéraction avec l'application pour un Non-Javascriptien, rendre plus rapide l'application parce que la c'est un peu laborieux. Peut etre rajouter plus de design et rajouter plus de fonctionnalité tel que le téléchargement du graphes en plusieurs format, etc... Pour finir, vous pouvez rendre le projet "compatible" avec Node.js. En effet, une biblioteque interessante, [Math.js](https://mathjs.org/docs/), permet de se liberer du javascript lors de l'ecriture de la fonction. Il suffira juste de changer `scripts/utils.mjs` avec les implementations necéssaire.
 
 ## Contributions & Fork
 

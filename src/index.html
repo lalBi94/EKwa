@@ -24,7 +24,10 @@
             property="og:description"
             content="Découvrez EKwa, l'outil pour tracer et analyser des courbes de fonction rapidement."
         />
-        <meta property="og:image" content="./icon.png" />
+        <meta
+            property="og:image"
+            content="https://github.com/lalBi94/EKwa/blob/master/src/icon.png?raw=true"
+        />
         <meta property="og:url" content="https://lalbi94.github.io/EKwa/" />
         <meta property="og:type" content="website" />
 
@@ -37,39 +40,66 @@
             name="twitter:description"
             content="Utilisez EKwa pour tracer facilement des courbes et visualiser vos fonctions."
         />
-        <meta name="twitter:image" content="./icon.png" />
+        <meta
+            name="twitter:image"
+            content="https://github.com/lalBi94/EKwa/blob/master/src/icon.png?raw=true"
+        />
 
         <link rel="canonical" href="https://lalbi94.github.io/EKwa/" />
     </head>
 
     <body>
+        <div id="export-tmp">
+            <button id="close-export">&#10006;</button>
+            <img id="export-tmp-img" src="" alt="" />
+        </div>
+
         <div id="info-box"></div>
 
         <div id="legend">
-            <div>
-                <img id="mini-logo" src="./icon.png" alt="Logo du site EKwa" />
+            <h3 class="title">Legend</h3>
+
+            <div id="bottom-legend">
+                <div id="legend-img-container">
+                    <img
+                        id="mini-logo"
+                        src="./icon.png"
+                        alt="Logo du site EKwa"
+                    />
+                </div>
+
+                <div id="legends">
+                    <div class="legends-case">
+                        <div class="colors" id="first-color"></div>
+                        <p>undefined on x</p>
+                    </div>
+
+                    <div class="legends-case">
+                        <div id="second-color" class="colors second"></div>
+                        <p>x < 0</p>
+                    </div>
+
+                    <div class="legends-case">
+                        <div id="third-color" class="colors third"></div>
+                        <p>x > 0</p>
+                    </div>
+                </div>
             </div>
 
-            <div id="legends">
-                <div class="legends-case">
-                    <div class="colors" id="first-color"></div>
-                    <p>undefined on x</p>
-                </div>
-
-                <div class="legends-case">
-                    <div id="second-color" class="colors second"></div>
-                    <p>x < 0</p>
-                </div>
-
-                <div class="legends-case">
-                    <div id="third-color" class="colors third"></div>
-                    <p>x > 0</p>
-                </div>
+            <div>
+                <a href="">Source code</a>
+                <a href="">Shortcuts</a>
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math"
+                    >Math.* docs</a
+                >
             </div>
         </div>
 
         <div id="configs">
             <div id="sub-configs">
+                <h3 class="title">Configuration</h3>
+
                 <div class="sub-sub-configs">
                     <label id="label-fn" for="fn">f(x)=</label>
 
