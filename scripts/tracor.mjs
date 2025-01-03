@@ -9,6 +9,10 @@ const label_slider = document.getElementById("label-slider");
 const dx = document.getElementById("dx");
 const compute = document.getElementById("compute");
 const infoBox = document.getElementById("info-box");
+const close_export = document.getElementById("close-export");
+const exportt = document.getElementById("export");
+const export_tmp_img = document.getElementById("export-tmp-img");
+const export_zone = document.getElementById("export-tmp");
 const fn = document.getElementById("fn");
 let fun = composeFunction(fn.value);
 
@@ -305,7 +309,18 @@ clear.addEventListener("click", (e) => {
     draw();
 });
 
-(() => {
+exportt.addEventListener("click", (e) => {
+    const img = graph.toDataURL("image/png");
+    export_tmp_img.src = img;
+    export_zone.style.display = "flex";
+});
+
+close_export.addEventListener("click", (e) => {
+    export_tmp_img.src = "";
+    export_zone.style.display = "none";
+});
+
+close_export.addEventListener("click", (e) => {})(() => {
     try {
         draw();
     } catch (err) {
