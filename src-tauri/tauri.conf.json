@@ -1,20 +1,23 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "EKwa",
-  "version": "0.0.1-beta",
+  "version": "0.0.1",
   "identifier": "com.ekwa.app",
   "build": {
+  "beforeBuildCommand": "",
     "frontendDist": "../src"
   },
   "app": {
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "EKwa - Traceur de courbe",
-        "width": 1000,
-        "height": 800,
-        "resizable": false,
-        "center": true
+        "title": "EKwa - Traceur de courbe @lalBi94",
+        "fullscreen": false,
+        "center": true,
+        "minWidth": 700,
+        "minHeight": 700,
+        "maximized": true,
+        "decorations": true
       }
     ],
     "security": {

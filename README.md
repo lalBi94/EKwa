@@ -87,7 +87,7 @@ $$
 f(x)=(\frac{sin(tan(e^{x}))}{log(x^{log(\frac{x}{x^{2}})})})^{x^{log(\frac{x}{x^{2}})}}
 $$
 
-en mettant ceci :
+en mettant ceci dans le champ de saisie de `f(x)`:
 
 ```js
 ((j, k) => Math.pow(Math.sin(Math.tan(j)) / Math.log(k), k))(
@@ -95,8 +95,7 @@ en mettant ceci :
     Math.pow(x, Math.log(x / Math.pow(x, 2)))
 );
 ```
-
-dans le champ de saisie de f(x), soit la version extra-compressé de :
+soit la version extra-compressé de :
 
 ```js
 const g = (j, k) => Math.pow(Math.sin(Math.tan(j)) / Math.log(k), k);
@@ -128,3 +127,45 @@ $$
 $$
 
 sont des transformations quelconques de λ.
+
+### Important a savoir
+
+Comme dit plus haut, l'input texte est traduit via la fonction [eval](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/eval) de Javascript. Elle est ecrite simplement comme ceci :
+```js
+/**
+ * Create function supportable by app
+ * @param {string} str The function  in string
+ * @returns {function} Function assiociate
+ */
+export const composeFunction = (str) => {
+    try {
+        return eval("(x)=>" + str);
+    } catch (err) {
+        return null;
+    }
+};
+```
+Cette facon de faire prive simplement le `x` des noms de variable possible d'utiliser dans l'expression javascript. Ce qui nous offre des possibilites d'operation tel que les sommes.
+
+Voici un exemple avec la somme des sinus cardinal :
+$$
+\sum_{n=0}^{+\infin}{\frac{\sin(n)}{n}}
+$$
+
+traduit en Javascript:
+```js
+((f,n) => {
+    let acc = 0; 
+    for(let i = 0; i < n; ++i) acc += (f(i) || 0); 
+    return acc;
+})(
+    (n) => Math.sin(n)/n,
+    x
+)
+```
+
+<img width="500" src="./img/5.png"/>
+
+On reconnait ici le formattage de "Cas plus complexe" qui fonctionne exactement selon le meme principe. Sauf qu'ici, il n'est pas question de `()=>;` mais de `()=>{return;}`, soit une legerte variante qui permet d'ecrire du code dans le scope de la fonction anonyme. Si vous manipuler directement une autre fonction, veillez a prevoir le cas ou f(x) est non definit. Histoire de ne pas faire 0.335 + undefined et faire planter l'application :).
+
+Gardez juste en tete que le retour de la fonction que vous allez ecrire dessinera un point au coordonnee `{x, y}` ou x correspond aux pas effectues et y le resultat de `f(x)`.
