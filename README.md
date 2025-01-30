@@ -148,6 +148,7 @@ export const composeFunction = (str) => {
 Cette facon de faire prive simplement le `x` des noms de variable possible d'utiliser dans l'expression javascript. Ce qui nous offre des possibilites d'operation tel que les sommes.
 
 Voici un exemple avec la somme des sinus cardinal :
+
 $$
 \sum_{n=0}^{+\infin}{\frac{\sin(n)}{n}}
 $$
